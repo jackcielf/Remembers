@@ -1,0 +1,25 @@
+<div class="container-form">
+  <form>
+    <div class="form-grup">
+      <label for="title">Titulo:</label>
+      <input type="text" id="title" placeholder="Coloque seu título" required />
+    </div>
+    <div class="form-grup">
+      <label for="description">Descrição:</label>
+      <textarea
+        id="description"
+        placeholder="Descreva essa lembrança"
+        required
+      ></textarea>
+    </div>
+    <div class="form-grup">
+      <label for="image">Coloque a foto dessa lembrança:</label>
+      <input type="file" id="image" required />
+    </div>
+    <input type="submit" value="{{ btnText }}" />
+  </form>
+
+  <div class="form-img">
+    <img src="../../../../assets/{{ nameImg }}" alt="form image" />
+  </div>
+</div>
