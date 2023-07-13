@@ -1,16 +1,34 @@
 <div class="container-form">
-  <form>
+  <form (ngSubmit)="submit()" [formGroup]="rememberForm" #formDir="ngForm">
     <div class="form-grup">
       <label for="title">Titulo:</label>
-      <input type="text" id="title" placeholder="Coloque um título" required />
+      <input
+        type="text"
+        id="title"
+        placeholder="Coloque um título"
+        formControlName="title"
+        required
+      />
+      <div class="validation-error" *ngIf="title.invalid && formDir.submitted">
+        <p *ngIf="title.errors?.['required']">Coloque um título, por favor!</p>
+      </div>
     </div>
     <div class="form-grup">
       <label for="description">Descrição:</label>
       <textarea
         id="description"
         placeholder="Descreva a imagem ou sua lembrança"
+        formControlName="description"
         required
       ></textarea>
+      <div
+        class="validation-error"
+        *ngIf="description.invalid && formDir.submitted"
+      >
+        <p *ngIf="description.errors?.['required']">
+          Descreva a lembrança, por favor!
+        </p>
+      </div>
     </div>
     <div class="form-grup">
       <label for="image">Coloque a foto dessa lembrança:</label>
