@@ -2,7 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--blackShadow);
 }
 
 .brand,
@@ -24,12 +24,17 @@ nav {
 
 .links a {
   padding: 0.1em 0.3em;
+  color: #535353;
+}
+
+.links a:hover {
+  color: var(--fontColor);
 }
 
 #add a {
-  color: #22b9ff;
+  color: #1985b8;
 }
 
 #add a:hover {
-  color: #1985b8;
+  color: #22b9ff;
 }

@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class NewRememberComponent {
   btnText: string = 'Postar';
-  nameImg: string = 'fundo.avif';
+  nameImg: string = 'noImage.png';
 }
