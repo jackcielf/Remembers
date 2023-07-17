@@ -32,7 +32,12 @@
     </div>
     <div class="form-grup">
       <label for="image">Coloque a foto dessa lembrança:</label>
-      <input type="file" id="image" required />
+      <input
+        type="file"
+        id="image"
+        (change)="onFileSelected($event)"
+        required
+      />
     </div>
     <input type="submit" value="{{ btnText }}" />
   </form>

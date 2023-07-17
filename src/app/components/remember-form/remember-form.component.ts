@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Remember } from 'src/app/Remember';
 
 @Component({
   selector: 'app-remember-form',
@@ -8,6 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./remember-form.component.css'],
 })
 export class RememberFormComponent {
+  @Output() onSubmit = new EventEmitter<Remember>();
   @Input() btnText!: string;
   @Input() nameImg!: string;
 
@@ -32,11 +34,18 @@ export class RememberFormComponent {
     return this.rememberForm.get('description')!;
   }
 
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    this.rememberForm.patchValue({ image: file });
+  }
+
   submit() {
     // Não permite que o formulário seja submetido, quando houver um erro de validação
     if (this.rememberForm.invalid) {
       return;
     }
-    console.log('Submeteu o formulário');
+    console.log(this.rememberForm.value);
+
+    this.onSubmit.emit(this.rememberForm.value);
   }
 }
