@@ -8,7 +8,7 @@ import { Remember } from '../Remember';
   providedIn: 'root',
 })
 export class RememberService {
-  private baseUrl: string = 'http://localhost:3333/';
+  private baseUrl: string = 'http://localhost:3333/'; // URL base da api
   private baseApiUrl = this.baseUrl;
   private apiUrl = `${this.baseApiUrl}api/remember`;
 

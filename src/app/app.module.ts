@@ -11,6 +11,8 @@ import { AboutComponent } from './components/pages/about/about.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NewRememberComponent } from './components/pages/new-remember/new-remember.component';
 import { RememberFormComponent } from './components/remember-form/remember-form.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { RememberFormComponent } from './components/remember-form/remember-form.
     HomeComponent,
     NewRememberComponent,
     RememberFormComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { RememberFormComponent } from './components/remember-form/remember-form.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
