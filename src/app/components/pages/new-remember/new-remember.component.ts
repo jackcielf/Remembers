@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Remember } from 'src/app/Remember';
+import { Router } from '@angular/router';
 
 import { RememberService } from 'src/app/services/remember.service';
+import { MessagesService } from 'src/app/services/messages.service';
 
 @Component({
   selector: 'app-new-remember',
@@ -12,7 +14,11 @@ export class NewRememberComponent {
   btnText: string = 'Postar';
   nameImg: string = 'noImage.png';
 
-  constructor(private rememberService: RememberService) {}
+  constructor(
+    private rememberService: RememberService,
+    private messagesService: MessagesService,
+    private router: Router
+  ) {}
 
   async createHandler(remember: Remember) {
     const formData = new FormData();
@@ -25,5 +31,9 @@ export class NewRememberComponent {
     }
 
     await this.rememberService.createRemember(formData).subscribe();
+
+    this.messagesService.add('Postado com sucesso!');
+
+    this.router.navigate(['/']);
   }
 }

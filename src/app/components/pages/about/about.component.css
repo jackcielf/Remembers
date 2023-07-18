@@ -1,0 +1,11 @@
+.container-about {
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+
+h2,
+p {
+  margin-bottom: 1rem;
+}
