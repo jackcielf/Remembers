@@ -1,3 +1,6 @@
 <div class="container-home">
-  <p>Pagina inicial</p>
+  <h1>Veja o que estão postando</h1>
+  <div class="remember-container" *ngFor="let remember of remembers">
+    <h2>{{ remember.title }}</h2>
+  </div>
 </div>
