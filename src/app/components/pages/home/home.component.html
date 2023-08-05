@@ -1,6 +1,27 @@
 <div class="container-home">
   <h1>Veja o que estão postando</h1>
-  <div class="remember-container" *ngFor="let remember of remembers">
-    <h2>{{ remember.title }}</h2>
+  <div *ngIf="remembers.length > 0; else noRemembers">
+    <div class="remember-container">
+      <div class="remember-box" *ngFor="let remember of remembers">
+        <div class="img-box">
+          <a routerLink="remembers/{{ remember.id }}">
+            <img
+              src="{{ baseApiUrl }}uploads/{{ remember.image }}"
+              alt="{{ remember.title }}"
+            />
+          </a>
+        </div>
+        <div class="remember-details">
+          <div>
+            <h3>{{ remember.title }}</h3>
+            <p>{{ remember.comments!.length }} Comentários</p>
+          </div>
+          <p>Postado em: {{ remember.created_at }}</p>
+        </div>
+      </div>
+    </div>
   </div>
+  <ng-template #noRemembers>
+    <h2>Sem postagens por enquanto...</h2>
+  </ng-template>
 </div>

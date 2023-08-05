@@ -14,7 +14,7 @@ import { Comment } from 'src/app/Comment';
 export class HomeComponent {
   allRemembers: Remember[] = [];
   remembers: Remember[] = [];
-  private baseApiUrl = 'http://localhost:3333/';
+  baseApiUrl = 'http://localhost:3333/';
 
   constructor(private rememberService: RememberService) {}
 
