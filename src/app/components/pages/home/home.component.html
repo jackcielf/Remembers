@@ -1,5 +1,15 @@
 <div class="container-home">
   <h1>Veja o que estão postando</h1>
+  <div class="search-container">
+    <form>
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <input
+        type="text"
+        placeholder="Busque por um lembrança..."
+        (input)="search($event)"
+      />
+    </form>
+  </div>
   <div *ngIf="remembers.length > 0; else noRemembers">
     <div class="remember-container">
       <div class="remember-box" *ngFor="let remember of remembers">

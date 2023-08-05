@@ -16,6 +16,9 @@ export class HomeComponent {
   remembers: Remember[] = [];
   baseApiUrl = 'http://localhost:3333/';
 
+  faSearch = faSearch;
+  searchTerm: string = '';
+
   constructor(private rememberService: RememberService) {}
 
   ngOnInit(): void {
@@ -31,5 +34,15 @@ export class HomeComponent {
       this.allRemembers = data;
       this.remembers = data;
     });
+  }
+
+  // FAZENDO A FILTRAGEM
+  search(e: Event): void {
+    const target = e.target as HTMLInputElement;
+    const value = target.value;
+
+    this.remembers = this.allRemembers.filter((remember) =>
+      remember.title.toLowerCase().includes(value)
+    );
   }
 }

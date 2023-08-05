@@ -66,6 +66,40 @@
   max-width: 75%;
 }
 
+.search-container {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 30px;
+}
+
+.search-container form {
+  width: 25%;
+  position: relative;
+}
+
+.search-container fa-icon {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  cursor: pointer;
+}
+
+.search-container input {
+  padding: 0.5em;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 255, 0.5);
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: var(--blue);
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 992px) {
   .remember-container {
